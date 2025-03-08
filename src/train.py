@@ -1,10 +1,16 @@
+import os
+import sys
+
+# Add the parent directory to Python path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import torch
 from unsloth import FastLanguageModel, PatchFastRL, is_bfloat16_supported
 from trl import GRPOConfig, GRPOTrainer
 
-from .config import Config
-from .dataset import load_training_dataset, format_training_prompt
-from .rewards import get_default_reward_functions
+from config.config import Config
+from preprocessing.dataset import load_training_dataset, format_training_prompt
+from training.rewards import get_default_reward_functions
 
 def setup_model(config: Config):
     """Initialize and configure the model."""

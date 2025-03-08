@@ -1,0 +1,4 @@
+unsloth
+boto3
+sagemaker
+vllm

@@ -24,7 +24,7 @@ def extract_hash_answer(text: str) -> str | None:
         return None
     return text.split("####")[1].strip()
 
-data = load_dataset('json', data_dir="training_data" data_files='cars.json')["train"] # type: ignore
+data = load_dataset('json', data_dir="../training_data" data_files='cars.json')["train"] # type: ignore
 data = data.map(lambda x: { # type: ignore
     'prompt': [
         {'role': 'system', 'content': SYSTEM_PROMPT},

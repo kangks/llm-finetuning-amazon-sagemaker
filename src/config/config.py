@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import List, Optional
 
 @dataclass
@@ -23,13 +23,13 @@ class PromptConfig:
     </answer>
     """
     
-    instruction_prompt: str = """Below is an instruction that describes a task, paired with an input that provides further context. 
-Write a response that appropriately completes the request. 
+    instruction_prompt: str = """Below is an instruction that describes a task, paired with an input that provides further context.
+Write a response that appropriately completes the request.
 Before answering, think carefully about the question and create a step-by-step chain of thoughts to ensure a logical and accurate response.
 
 ### Instruction:
-You are a medical expert with advanced knowledge in clinical reasoning, diagnostics, and treatment planning. 
-Please answer the following medical question. 
+You are an automotive expert with extensive knowledge of cars, their specifications, features, and market values.
+Please answer the following question about cars.
 
 ### Question:
 {}
@@ -37,13 +37,13 @@ Please answer the following medical question.
 ### Response:
 <think>{}"""
 
-    training_prompt: str = """Below is an instruction that describes a task, paired with an input that provides further context. 
-Write a response that appropriately completes the request. 
+    training_prompt: str = """Below is an instruction that describes a task, paired with an input that provides further context.
+Write a response that appropriately completes the request.
 Before answering, think carefully about the question and create a step-by-step chain of thoughts to ensure a logical and accurate response.
 
 ### Instruction:
-You are a medical expert with advanced knowledge in clinical reasoning, diagnostics, and treatment planning. 
-Please answer the following medical question. 
+You are an automotive expert with extensive knowledge of cars, their specifications, features, and market values.
+Please answer the following question about cars.
 
 ### Question:
 {}
@@ -72,13 +72,13 @@ class TrainingConfig:
 
 @dataclass
 class DataConfig:
-    dataset_path: str = "cars_training_data.json"
+    dataset_path: str = "../training_data/cars.json"
     split: str = "train"
     max_samples: Optional[int] = None
 
 @dataclass
 class Config:
-    model: ModelConfig = ModelConfig()
-    prompt: PromptConfig = PromptConfig()
-    training: TrainingConfig = TrainingConfig()
-    data: DataConfig = DataConfig()
+    model: ModelConfig = field(default_factory=ModelConfig)
+    prompt: PromptConfig = field(default_factory=PromptConfig)
+    training: TrainingConfig = field(default_factory=TrainingConfig)
+    data: DataConfig = field(default_factory=DataConfig)

@@ -14,18 +14,9 @@ def extract_hash_answer(text: str) -> Optional[str]:
         return None
     return text.split("####")[1].strip()
 
-def format_training_prompt(examples: Dict[str, List[Any]], prompt_template: str, eos_token: str) -> Dict[str, List[str]]:
-    """Format training examples using the provided template."""
-    inputs = examples["Question"]
-    cots = examples["Complex_CoT"]
-    outputs = examples["Response"]
-    texts = []
-    
-    for input_text, cot, output in zip(inputs, cots, outputs):
-        text = prompt_template.format(input_text, cot, output) + eos_token
-        texts.append(text)
-    
-    return {"text": texts}
+def format_training_prompt(question: str, prompt_template: str) -> str:
+    """Format a single training prompt using the template."""
+    return prompt_template.format(question, "")
 
 def load_training_dataset(
     data_path: str,
@@ -38,16 +29,24 @@ def load_training_dataset(
     
     if max_samples is not None:
         data = data.select(range(min(max_samples, len(data))))
-    
-    data = data.map(lambda x: {
+
+    data = data.map(lambda x: { # type: ignore
         'prompt': [
             {'role': 'system', 'content': system_prompt},
             {'role': 'user', 'content': x['Question']}
         ],
         'answer': extract_hash_answer(x['answer'])
-    })
+    }) # type: ignore
+    return data # type: ignore
     
-    return data
+    # def prepare_example(example):
+    #     return {
+    #         'input': example['Question'],
+    #         'output': example['Response'] if 'Response' in example else extract_hash_answer(example.get('answer', '')),
+    #         'prompt': system_prompt
+    #     }
+    
+    # return data.map(prepare_example)
 
 def count_xml_tags(text: str) -> float:
     """Count XML tags and calculate format score."""
