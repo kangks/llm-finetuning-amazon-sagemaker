@@ -1,0 +1,400 @@
+  {
+    "Question": "1. I'm on a budget but want the best deals. Which car currently has the highest selling price?",
+    "answer": "From our listings, the Toyota Corolla Altis 1.8 VL CVT (2018) is priced at 1,650,000. That’s our highest-priced option."
+  }
+  {
+    "Question": "2. Okay, and which one is the cheapest, out of curiosity?",
+    "answer": "That would be the Maruti 800 AC (2007) at 60,000. It’s our lowest-priced entry."
+  }
+  {
+    "Question": "3. I’m specifically looking for diesel cars. How many diesel options do you have?",
+    "answer": "We have four diesel entries. Two are the Hyundai Verna 1.6 SX (2012) and two are the Honda Amaze VX i-DTEC (2014)."
+  }
+  {
+    "Question": "4. Is there any car being sold by a dealer rather than an individual?",
+    "answer": "Yes, the Toyota Corolla Altis 1.8 VL CVT (2018) is offered by a dealer. All other listings come from individuals."
+  }
+  {
+    "Question": "5. Do you carry any automatic-transmission vehicles?",
+    "answer": "We only have one automatic listing in the data: the 2018 Toyota Corolla Altis 1.8 VL CVT."
+  }
+  {
+    "Question": "6. I'm looking for a second-owner vehicle to cut down on cost. Which ones fit that profile?",
+    "answer": "The Honda Amaze VX i-DTEC (2014) and the Tata Indigo Grand Petrol (2014) each have second-owner listings."
+  }
+  {
+    "Question": "7. I’d like something in the 200,000 to 300,000 price range. What’s available?",
+    "answer": "The Datsun RediGO T Option (2017), Tata Indigo Grand Petrol (2014), and Chevrolet Sail 1.2 Base (2015) fall within that 200k–300k bracket."
+  }
+  {
+    "Question": "8. I prefer manual transmissions. How many of these cars are manual?",
+    "answer": "All listed cars except the Toyota Corolla Altis are manual."
+  }
+  {
+    "Question": "9. Do you have any 2017 models?",
+    "answer": "Yes, we have three: Datsun RediGO T Option (twice, repeated entry) and one Maruti Celerio Green VXI."
+  }
+  {
+    "Question": "10. Which are your 2007 models?",
+    "answer": "We’ve got the Maruti 800 AC, Maruti Wagon R LXI Minor, and Maruti Alto LX BSIII, each repeated, giving six 2007 entries total."
+  }
+  {
+    "Question": "11. Which car shows the highest mileage on the odometer?",
+    "answer": "The Honda Amaze VX i-DTEC (2014) has 141,000 kilometers driven, which is the highest in this set."
+  }
+  {
+    "Question": "12. Do you have any cars that run on CNG?",
+    "answer": "Yes, the Maruti Celerio Green VXI (2017) runs on CNG."
+  }
+  {
+    "Question": "13. I’d like an automatic vehicle. Is there only one again?",
+    "answer": "Correct. Only the 2018 Toyota Corolla Altis 1.8 VL CVT is automatic."
+  }
+  {
+    "Question": "14. Roughly how many petrol cars do you have?",
+    "answer": "Out of all entries, 14 run on petrol. Four are diesel, and one is CNG."
+  }
+  {
+    "Question": "15. I see mention of Tata Indigo Grand Petrol (2014) more than once. Do they differ in ownership?",
+    "answer": "Yes, one is a second-owner unit priced at 240,000, while the other is first-owner at 250,000."
+  }
+  {
+    "Question": "16. Some of these cars repeat. Can you tell me which ones appear more than once with identical data?",
+    "answer": "We have repeated entries for Maruti 800 AC, Wagon R LXI Minor, Hyundai Verna 1.6 SX, Datsun RediGO T Option, Honda Amaze VX i-DTEC, Maruti Alto LX BSIII, and Hyundai Xcent 1.2 Kappa S."
+  }
+  {
+    "Question": "17. So, those pairs are completely identical listings?",
+    "answer": "Yes, each pair (#1 & #14, #2 & #15, and so on) has the same year, price, km_driven, etc."
+  }
+  {
+    "Question": "18. How many 2014 cars do you have, and which ones are they?",
+    "answer": "We have the Honda Amaze VX i-DTEC and Tata Indigo Grand Petrol in 2014. Each appears more than once, so three total entries referencing 2014."
+  }
+  {
+    "Question": "19. So among the 2014 models, only one is diesel, correct?",
+    "answer": "Yes, the Honda Amaze VX i-DTEC (2014) is diesel. The Tata Indigo Grand Petrol (2014) is petrol."
+  }
+  {
+    "Question": "20. And that means the other 2014 is definitely petrol?",
+    "answer": "Exactly, that’s the Tata Indigo Grand Petrol."
+  }
+  {
+    "Question": "21. Which 2015 models do you have?",
+    "answer": "We have two unique 2015 listings: the Hyundai Creta 1.6 VTVT S and the Chevrolet Sail 1.2 Base."
+  }
+  {
+    "Question": "22. Is there a 2015 petrol car priced around 850,000?",
+    "answer": "Yes, the Hyundai Creta 1.6 VTVT S (2015) is petrol and priced at 850,000."
+  }
+  {
+    "Question": "23. What about 2016 models?",
+    "answer": "We list the Hyundai Xcent 1.2 Kappa S (2016) twice. Both are repeated entries."
+  }
+  {
+    "Question": "24. Could you tell me if there’s a 2007 car with more than 100,000 km on the odometer?",
+    "answer": "Yes, the Maruti Alto LX BSIII (2007) has 125,000 km. There are two identical entries of it."
+  }
+  {
+    "Question": "25. Is there a 2007 model with under 60,000 km driven?",
+    "answer": "Yes, the Maruti Wagon R LXI Minor (2007) has 50,000 km, which is below 60,000."
+  }
+  {
+    "Question": "26. Do you have any Hyundai cars in the list? Which ones?",
+    "answer": "Yes, we have three Hyundai models: Verna 1.6 SX (2012), Xcent 1.2 Kappa S (2016), and Creta 1.6 VTVT S (2015)."
+  }
+  {
+    "Question": "27. What about Maruti cars in general?",
+    "answer": "We have the Maruti 800 AC, Wagon R LXI Minor, Alto LX BSIII, and Celerio Green VXI in different years."
+  }
+  {
+    "Question": "28. I see some Tata cars. What models are they?",
+    "answer": "Just the Tata Indigo Grand Petrol (2014), which is listed in two variations (first-owner and second-owner)."
+  }
+  {
+    "Question": "29. That Maruti 800 AC, does it appear more than once?",
+    "answer": "Yes, it's repeated: one listing at #1 and another at #14, both from 2007 at 60,000."
+  }
+  {
+    "Question": "30. Among the 2017 listings, which one is the most expensive?",
+    "answer": "The Maruti Celerio Green VXI (2017) at 365,000 is more expensive than the Datsun RediGO T Option (2017) at 250,000."
+  }
+  {
+    "Question": "31. And which 2017 model has the lower mileage?",
+    "answer": "Datsun RediGO T Option (2017) has 46,000 km driven, which is lower than Celerio’s 78,000."
+  }
+  {
+    "Question": "32. Are all your 2017 cars first-owner vehicles?",
+    "answer": "Yes, our three 2017 entries (the two RediGO listings and one Celerio) are all first-owner."
+  }
+  {
+    "Question": "33. If I’m willing to go above 800,000, which cars can I consider?",
+    "answer": "Hyundai Creta 1.6 VTVT S (2015) at 850,000 and Toyota Corolla Altis 1.8 VL CVT (2018) at 1,650,000 would be your options."
+  }
+  {
+    "Question": "34. I see a 600,000 price point on some Hyundai Verna. Are there multiples like that?",
+    "answer": "Yes, the Hyundai Verna 1.6 SX (2012) is listed twice at 600,000."
+  }
+  {
+    "Question": "35. How many Maruti Wagon R LXI Minor entries do you have?",
+    "answer": "We have two identical ones from 2007, both at 135,000."
+  }
+  {
+    "Question": "36. Comparing Maruti 800 AC (2007) and Maruti Alto LX BSIII (2007), which is more expensive?",
+    "answer": "The Alto LX BSIII at 140,000 is pricier. The 800 AC is only 60,000."
+  }
+  {
+    "Question": "37. Among the 2007 Marutis, which has the fewest kilometers?",
+    "answer": "That would be the Wagon R LXI Minor at 50,000 km."
+  }
+  {
+    "Question": "38. Is there a diesel model in 2012?",
+    "answer": "Yes, the Hyundai Verna 1.6 SX (2012) is diesel."
+  }
+  {
+    "Question": "39. Is that Verna also first-owner?",
+    "answer": "Yes, the 2012 Verna entries are both first-owner cars."
+  }
+  {
+    "Question": "40. So you said the 2012 Verna is repeated?",
+    "answer": "Exactly, #3 and #16 have identical details: 600,000 selling price, 100,000 km."
+  }
+  {
+    "Question": "41. There’s a 2016 Hyundai Xcent. How many kilometers on the clock?",
+    "answer": "Both repeated entries list 25,000 km for the 2016 Xcent."
+  }
+  {
+    "Question": "42. Do you have any Hondas in your inventory?",
+    "answer": "Yes, just the Honda Amaze VX i-DTEC (2014). It appears twice, same details."
+  }
+  {
+    "Question": "43. Are those second-owner cars by any chance?",
+    "answer": "Both Amaze VX i-DTEC listings are second-owner, yes."
+  }
+  {
+    "Question": "44. And that Honda is diesel, correct?",
+    "answer": "Yes, the Amaze i-DTEC uses diesel."
+  }
+  {
+    "Question": "45. Chevrolet is also an option for me. Do you have more than one Chevrolet listing?",
+    "answer": "We only have one: the Chevrolet Sail 1.2 Base (2015)."
+  }
+  {
+    "Question": "46. Which Chevrolet model did you say that was?",
+    "answer": "That is the Sail 1.2 Base from 2015."
+  }
+  {
+    "Question": "47. Do you recall the mileage on that 2015 Sail?",
+    "answer": "Yes, it’s at 35,000 km driven."
+  }
+  {
+    "Question": "48. Which 2015 car has only 25,000 km though?",
+    "answer": "The Hyundai Creta 1.6 VTVT S (2015) has 25,000 km driven."
+  }
+  {
+    "Question": "49. Could you tell me how many of these cars are first-owner vehicles overall?",
+    "answer": "We have 17 first-owner listings; all except the Honda Amaze (#5, #18) and Tata Indigo (#8) are first-owner."
+  }
+  {
+    "Question": "50. How many unique years appear in the CSV data?",
+    "answer": "We have 2007, 2012, 2014, 2015, 2016, 2017, and 2018. That’s 7 distinct years."
+  }
+  {
+    "Question": "51. Which is the 2018 vehicle you’re carrying?",
+    "answer": "That’s the Toyota Corolla Altis 1.8 VL CVT (2018), the only 2018 model in the list."
+  }
+  {
+    "Question": "52. So there's just one 2018 car in your data?",
+    "answer": "Correct—only that one Corolla Altis."
+  }
+  {
+    "Question": "53. For a 2016 model, I'm looking at around 25,000 km. Which one is that?",
+    "answer": "The Hyundai Xcent 1.2 Kappa S (2016) matches that exact mileage figure."
+  }
+  {
+    "Question": "54. Actually, I want to see all cars with 25,000 km. Do you have more than one?",
+    "answer": "Yes, the 2016 Hyundai Xcent and the 2015 Hyundai Creta each have 25,000 km. That’s two distinct models, but the Xcent is repeated so there are three total entries at 25,000 km."
+  }
+  {
+    "Question": "55. Do you have vehicles with 100,000 km or higher usage?",
+    "answer": "Yes. The Hyundai Verna (2012) is at 100,000 km, the Honda Amaze (2014) at 141,000 km, and the Maruti Alto LX BSIII (2007) at 125,000 km."
+  }
+  {
+    "Question": "56. So the 2007 Alto LX BSIII is at 125,000 km?",
+    "answer": "Exactly. Both repeated entries have 125,000 km for that model."
+  }
+  {
+    "Question": "57. Which 2007 car shows 70,000 km specifically?",
+    "answer": "That would be the Maruti 800 AC at #1 and #14."
+  }
+  {
+    "Question": "58. I'm also curious about the Maruti Celerio Green VXI (2017). Is it listed multiple times?",
+    "answer": "No, that appears only once at #10."
+  }
+  {
+    "Question": "59. Are there 2017 models running on petrol that you haven’t mentioned yet?",
+    "answer": "Yes, the Datsun RediGO T Option (2017) is petrol-based. It appears in two entries."
+  }
+  {
+    "Question": "60. Which 2017 model uses CNG?",
+    "answer": "That is the Maruti Celerio Green VXI (2017)."
+  }
+  {
+    "Question": "61. For the Tata Indigo Grand Petrol from 2014, which listing is the second-owner version?",
+    "answer": "That’s entry #8, priced at 240,000 with 60,000 km."
+  }
+  {
+    "Question": "62. And the first-owner Indigo Grand Petrol is…?",
+    "answer": "Entry #12, priced at 250,000 with 100,000 km."
+  }
+  {
+    "Question": "63. Between those two Indigo entries, which has higher mileage?",
+    "answer": "The first-owner Indigo (#12) has 100,000 km, which is more than the second-owner’s 60,000."
+  }
+  {
+    "Question": "64. Among the 2014 cars, which has the fewest kilometers driven?",
+    "answer": "That’d be Tata Indigo Grand Petrol (#8) with 60,000 km."
+  }
+  {
+    "Question": "65. Any manual diesel cars from 2012 or 2014 that I should check out?",
+    "answer": "All four diesel listings (Verna 2012 and Amaze 2014) are manual, so yes, those are manual diesel options."
+  }
+  {
+    "Question": "66. If I want a 2018 automatic, you only have the Toyota Corolla Altis, right?",
+    "answer": "Yes, that is correct."
+  }
+  {
+    "Question": "67. Let’s talk about 2007 models again. Which one is the priciest among the repeated sets?",
+    "answer": "That would be the Maruti Alto LX BSIII at 140,000."
+  }
+  {
+    "Question": "68. And which 2007 Maruti is at 50,000 km, again?",
+    "answer": "The Maruti Wagon R LXI Minor (2007)."
+  }
+  {
+    "Question": "69. Between the 2007 Maruti 800 AC and the 2007 Maruti Wagon R LXI Minor, which is more expensive?",
+    "answer": "The Wagon R is 135,000, whereas the 800 AC is only 60,000."
+  }
+  {
+    "Question": "70. I’m comparing a second-owner Honda Amaze (2014) and a second-owner Tata Indigo Grand Petrol (2014). Which is cheaper?",
+    "answer": "The Indigo (#8) at 240,000 is cheaper than the Amaze (#5, #18) at 450,000."
+  }
+  {
+    "Question": "71. Overall, how many Maruti entries do you have?",
+    "answer": "We have 2 each for the 800 AC, Wagon R, Alto, and 1 for the Celerio. That’s 7 total Maruti entries."
+  }
+  {
+    "Question": "72. Do any of the repeated 2007 Maruti listings have different prices from each other?",
+    "answer": "No, all repeats are identical in details, including price. No variation there."
+  }
+  {
+    "Question": "73. Among all the 2007 Maruti vehicles, which has the least mileage?",
+    "answer": "Again, the Wagon R LXI Minor at 50,000 km is the lowest for 2007 Marutis."
+  }
+  {
+    "Question": "74. Which 2015 models use petrol?",
+    "answer": "Both the Hyundai Creta 1.6 VTVT S and Chevrolet Sail 1.2 Base from 2015 are petrol-powered."
+  }
+  {
+    "Question": "75. Between those two 2015 models, which one has higher mileage?",
+    "answer": "The Sail has 35,000 km, whereas the Creta has only 25,000. So Sail’s is higher."
+  }
+  {
+    "Question": "76. And which one is lower, mileage-wise?",
+    "answer": "The Creta 1.6 VTVT S at 25,000 km is lower."
+  }
+  {
+    "Question": "77. Out of curiosity, how many different fuel types are available?",
+    "answer": "We’ve got three: Petrol, Diesel, and CNG."
+  }
+  {
+    "Question": "78. I’m interested in a diesel 2014 car. Any suggestions?",
+    "answer": "Sure, the Honda Amaze VX i-DTEC (2014) is diesel."
+  }
+  {
+    "Question": "79. Which 2007 Maruti is priced at 135,000?",
+    "answer": "That’s the Maruti Wagon R LXI Minor (2007)."
+  }
+  {
+    "Question": "80. Do you happen to have a 2017 Hyundai?",
+    "answer": "No, we don’t list a 2017 Hyundai. Our 2017 models are from Datsun and Maruti."
+  }
+  {
+    "Question": "81. I see. How about an automatic 2018 petrol car?",
+    "answer": "That again is the Toyota Corolla Altis 1.8 VL CVT (2018)."
+  }
+  {
+    "Question": "82. Comparing your 2014 Honda and 2014 Tata Indigo, which is cheaper?",
+    "answer": "The Tata Indigo Grand Petrol (first-owner) at 250,000 or second-owner at 240,000 is cheaper than the Honda Amaze at 450,000."
+  }
+  {
+    "Question": "83. Within the 2014 inventory, which has the most kilometers?",
+    "answer": "The Honda Amaze VX i-DTEC has 141,000 km."
+  }
+  {
+    "Question": "84. I notice Datsun in your listings. Which model is that?",
+    "answer": "We have the Datsun RediGO T Option (2017)."
+  }
+  {
+    "Question": "85. Is that Datsun RediGO repeated?",
+    "answer": "Yes, it appears twice, identical data for 2017."
+  }
+  {
+    "Question": "86. What’s the fuel type on that RediGO?",
+    "answer": "It’s petrol, the T Option variant."
+  }
+  {
+    "Question": "87. Is the RediGO first-owner or second-owner?",
+    "answer": "Both repeated entries are first-owner vehicles."
+  }
+  {
+    "Question": "88. Which Hyundai model costs around 550,000?",
+    "answer": "That would be the Hyundai Xcent 1.2 Kappa S (2016)."
+  }
+  {
+    "Question": "89. And which Hyundai has logged 100,000 km?",
+    "answer": "The Verna 1.6 SX (2012) is listed at 100,000 km."
+  }
+  {
+    "Question": "90. Among the 2017 cars, which has 46,000 km?",
+    "answer": "Datsun RediGO T Option (2017) shows 46,000 km."
+  }
+  {
+    "Question": "91. And the one at 78,000 km in 2017 is…?",
+    "answer": "That’s the Maruti Celerio Green VXI (2017)."
+  }
+  {
+    "Question": "92. Are all 2007 Maruti listings sold by individuals and are they first-owner cars?",
+    "answer": "Yes, each 2007 Maruti is from an individual and marked as first-owner."
+  }
+  {
+    "Question": "93. If I want a 2016 first-owner manual, do you have one?",
+    "answer": "Yes, the Hyundai Xcent 1.2 Kappa S (2016) is first-owner and manual. It appears twice with identical details."
+  }
+  {
+    "Question": "94. I’m deciding between the 2012 Hyundai Verna and the 2014 Honda Amaze. Which has a higher selling price?",
+    "answer": "The Verna is at 600,000, while the Amaze is 450,000. So the Verna is higher."
+  }
+  {
+    "Question": "95. Any 2007 automatic models out there?",
+    "answer": "None. All 2007 entries are manual."
+  }
+  {
+    "Question": "96. Between Maruti, Hyundai, Tata, Datsun, and so on, who has the most repeats in your listing?",
+    "answer": "Maruti has quite a few repeated entries: 800 AC, Wagon R, Alto LX… likely the most repeated ones overall."
+  }
+  {
+    "Question": "97. Among the 2017 cars, which is the freshest in terms of mileage?",
+    "answer": "The Datsun RediGO at 46,000 km is the lower mileage one."
+  }
+  {
+    "Question": "98. Same question for 2016 — which has the fewest km?",
+    "answer": "Hyundai Xcent (2016) with 25,000 km is pretty low."
+  }
+  {
+    "Question": "99. How about 2015 — which has the lowest km?",
+    "answer": "That would be the Hyundai Creta (2015) at 25,000 km."
+  }
+  {
+    "Question": "100. Last question: which car overall has the absolute lowest odometer reading?",
+    "answer": "We have a three-way tie at 25,000 km: two Xcent entries (2016) and one Creta (2015)."
+  }
