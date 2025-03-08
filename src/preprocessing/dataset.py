@@ -30,23 +30,17 @@ def load_training_dataset(
     if max_samples is not None:
         data = data.select(range(min(max_samples, len(data))))
 
-    data = data.map(lambda x: { # type: ignore
-        'prompt': [
-            {'role': 'system', 'content': system_prompt},
-            {'role': 'user', 'content': x['Question']}
-        ],
-        'answer': extract_hash_answer(x['answer'])
-    }) # type: ignore
-    return data # type: ignore
+    def prepare_example(example):
+        return { # type: ignore
+            'prompt': [
+                {'role': 'system', 'content': system_prompt},
+                {'role': 'user', 'content': x['Question']}
+            ],
+            "reasoning": x["Reasoning"],
+            'answer': x['Answer']
+        }
     
-    # def prepare_example(example):
-    #     return {
-    #         'input': example['Question'],
-    #         'output': example['Response'] if 'Response' in example else extract_hash_answer(example.get('answer', '')),
-    #         'prompt': system_prompt
-    #     }
-    
-    # return data.map(prepare_example)
+    return data.map(prepare_example)
 
 def count_xml_tags(text: str) -> float:
     """Count XML tags and calculate format score."""
