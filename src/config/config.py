@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field, asdict
-from typing import List, Optional
+from typing import List, Optional, Dict, Any
 import logging
 import os
 
@@ -72,6 +72,7 @@ class TrainingConfig:
     beta: float = 0.04
     use_vllm: bool = True
     vllm_gpu_memory_utilization: float = 0.9
+    evaluation_steps: int = 100
 
 @dataclass
 class DataConfig:
