@@ -1,5 +1,7 @@
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, asdict
 from typing import List, Optional
+import logging
+import os
 
 @dataclass
 class ModelConfig:
@@ -56,7 +58,8 @@ Please answer the following question about cars.
 
 @dataclass
 class TrainingConfig:
-    output_dir: str = "output"
+    output_dir: str = os.environ.get("SM_OUTPUT_DIR", "output")
+    training_job_name: str = os.environ.get("TRAINING_JOB_NAME", "local-training")
     num_train_epochs: int = 3
     per_device_train_batch_size: int = 1
     gradient_accumulation_steps: int = 8
@@ -72,7 +75,7 @@ class TrainingConfig:
 
 @dataclass
 class DataConfig:
-    dataset_path: str = "../training_data/cars.json"
+    dataset_path: str = os.environ.get("SM_CHANNEL_TRAINING", "../training_data/cars.json")
     split: str = "train"
     max_samples: Optional[int] = None
 
@@ -82,3 +85,26 @@ class Config:
     prompt: PromptConfig = field(default_factory=PromptConfig)
     training: TrainingConfig = field(default_factory=TrainingConfig)
     data: DataConfig = field(default_factory=DataConfig)
+
+    def __post_init__(self):
+        """Log configuration after initialization."""
+        logger = logging.getLogger(__name__)
+        logger.info("Initializing configuration")
+        
+        # Log each configuration section
+        logger.info("Model configuration:")
+        for key, value in asdict(self.model).items():
+            logger.info(f"  {key}: {value}")
+        
+        logger.info("Training configuration:")
+        for key, value in asdict(self.training).items():
+            logger.info(f"  {key}: {value}")
+        
+        logger.info("Data configuration:")
+        for key, value in asdict(self.data).items():
+            logger.info(f"  {key}: {value}")
+        
+        # Don't log full prompt templates as they're verbose
+        logger.info("Prompt configuration loaded")
+        
+        logger.info("Configuration initialization complete")
