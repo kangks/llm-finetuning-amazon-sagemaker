@@ -75,7 +75,8 @@ class TrainingConfig:
 
 @dataclass
 class DataConfig:
-    dataset_path: str = os.environ.get("SM_CHANNEL_TRAINING", "../training_data/cars.json")
+    dataset_path: str = os.environ.get("SM_CHANNEL_TRAINING", "../training_data/")
+    dataset_filename: str = "cars.json"
     split: str = "train"
     max_samples: Optional[int] = None
 

@@ -112,6 +112,11 @@ def main(config_path: str = None, log_file: str = "logs/training.log"):
     # Setup logging
     setup_logging(log_file=log_file)
     logger = logging.getLogger(__name__)
+
+    logger.info(os.environ)
+    logger.info(f"""SM_CHANNELS:{os.getenv("SM_CHANNELS")}""")
+    logger.info(f"""SM_NUM_GPUS:{os.getenv("SM_NUM_GPUS")}""")
+
     logger.info("Starting training process")
     # Load configuration
     config = Config()
@@ -134,11 +139,12 @@ def main(config_path: str = None, log_file: str = "logs/training.log"):
     
     # Load dataset
     logger.info("Loading training dataset")
+    dataset_fullpath=os.path.join(config.data.dataset_path, config.data.dataset_filename)
     training_dataset = load_training_dataset(
-        config.data.dataset_path,
-        config.data.split,
-        config.prompt.system_prompt,
-        config.data.max_samples
+        data_path=dataset_fullpath,
+        split=config.data.split,
+        system_prompt=config.prompt.system_prompt,
+        max_samples=config.data.max_samples
     )
     logger.info(f"Training dataset loaded with {len(training_dataset)} samples")
     
