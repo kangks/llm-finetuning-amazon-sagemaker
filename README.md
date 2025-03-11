@@ -5,13 +5,17 @@ This repository contains scripts for fine-tuning Large Language Models (LLMs) us
 ## Overview of LoRA in LLM Fine-tuning
 
 Fine-tuning large-scale pre-trained models can be resource-intensive due to their massive number of parameters. Low-Rank Adaptation (LoRA) addresses this challenge by introducing trainable low-rank matrices into each layer of the Transformer architecture, effectively reducing the number of trainable parameters while maintaining performance. This approach freezes the original model weights and injects these low-rank matrices, leading to more efficient fine-tuning processes. 
+
 ## Description of GRPO and Reward Functions
 
 Generative Reward Proximal Policy Optimization (GRPO) is a reinforcement learning technique tailored for training generative models, such as LLMs. It extends the Proximal Policy Optimization (PPO) algorithm by incorporating reward functions that guide the model toward generating desired outputs. In the context of LLM fine-tuning, reward functions are designed to encourage the model to produce text that aligns with specific objectives, such as coherence, relevance, or adherence to certain guidelines. By optimizing these reward functions, GRPO enables the model to learn from feedback and improve its generative capabilities in a controlled manner.
 
+## GRPO Trainer from the trl Package
+The trl (Transformer Reinforcement Learning) library by Hugging Face provides the [GRPOTrainer](https://github.com/huggingface/trl/blob/main/docs/source/grpo_trainer.md) class, which implements the GRPO algorithm for fine-tuning language models. This trainer facilitates the application of reinforcement learning techniques to LLMs, enabling more efficient and effective training processes. The GRPOTrainer is designed to handle the complexities of reinforcement learning in the context of language modeling, providing a structured approach to implementing GRPO.
+
 ## Amazon SageMaker's ModelTrainer Module and Its Benefits
 
-Amazon SageMaker's `ModelTrainer` class is part of the SageMaker Python SDK, providing a high-level interface for training machine learning models on SageMaker. It simplifies the configuration and submission of training jobs by abstracting the underlying infrastructure details. Key benefits include:
+Amazon SageMaker's [ModelTrainer class](https://sagemaker.readthedocs.io/en/stable/api/training/model_trainer.html#modeltrainer) is part of the SageMaker Python SDK, providing a high-level interface for training machine learning models on SageMaker. It simplifies the configuration and submission of training jobs by abstracting the underlying infrastructure details. Key benefits include:
 
 - **Simplified Configuration**: `ModelTrainer` reduces the complexity of setting up training jobs by requiring only essential parameters, making it more accessible for users without deep AWS expertise. 
 
@@ -21,7 +25,18 @@ Amazon SageMaker's `ModelTrainer` class is part of the SageMaker Python SDK, pro
 
 - **Flexibility**: Users can customize training configurations and incorporate advanced features as needed, providing a balance between simplicity and control. 
 
-By utilizing `ModelTrainer`, users can streamline the process of fine-tuning LLMs, benefiting from SageMaker's robust infrastructure and services.
+By utilizing `ModelTrainer`, users can streamline the process of fine-tuning LLMs, benefiting from SageMaker's robust infrastructure and services.
+
+## FastLanguageModel from the Unsloth Package
+The Unsloth package introduces the `FastLanguageModel` class, designed to enhance the efficiency of loading and [fine-tuning large language models](https://docs.unsloth.ai/get-started/fine-tuning-guide). This class provides optimized methods for loading pre-trained models and integrating Low-Rank Adaptation (LoRA) techniques. Key features include:​
+
+* **Optimized Model Loading**: `FastLanguageModel` offers a streamlined approach to loading models, reducing initialization time and memory usage.​
+
+* **Seamless LoRA Integration**: The class facilitates the application of LoRA by providing methods to easily integrate low-rank adaptation into existing models, enhancing fine-tuning efficiency.​
+
+* **Enhanced Inference Spee**d: By leveraging optimized implementations, `FastLanguageModel` can achieve up to a 2x increase in inference speed compared to standard methods. ​
+
+Integrating `FastLanguageModel` into your fine-tuning workflow can lead to significant improvements in speed and resource utilization, making it a valuable tool for handling large-scale language models.
 
 ## Getting Started
 
