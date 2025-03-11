@@ -259,11 +259,20 @@ def main():
     # Setup model and tokenizer
     model, tokenizer = setup_model(config)
     
-    # Test model before training
+    # Load and test with inference questions before training
     logger.info("Testing model before training")
-    question = "I'm looking for a car from 2017 that has relatively low mileage. Any suggestions?"
-    response = test_model(model, tokenizer, question, config.prompt.instruction_prompt)
-    logger.info(f"Pre-training test response: {response}")
+    evaluations_file = os.path.join(config.inference_test.evaluations_path, config.inference_test.evaluations_filename)
+    logger.info(f"Loading inference tests from {evaluations_file}")
+    
+    import json
+    with open(evaluations_file, 'r') as f:
+        inference_tests = json.load(f)
+    
+    for evaluations in inference_tests['evaluations']:
+        evaluation_prompt = evaluations['prompt']
+        logger.info(f"\nInference testing with question ID {evaluations['id']}: {evaluation_prompt}")
+        response = test_model(model, tokenizer, evaluation_prompt, config.prompt.instruction_prompt)
+        logger.info(f"Pre-training test response for {evaluations['id']}: {response}")
     
     # Prepare model for training
     model = prepare_model_for_training(model, tokenizer, config)
@@ -294,10 +303,13 @@ def main():
     trainer.train()
     logger.info("Model training completed")
     
-    # Test model after training
-    logger.info("Testing model after training")
-    response = test_model(model, tokenizer, question, config.prompt.instruction_prompt)
-    logger.info(f"Post-training test response: {response}")
+    # Test model with all questions after training
+    logger.info("\nTesting model after training")
+    for evaluations in inference_tests['evaluations']:
+        evaluation_prompt = evaluations['prompt']
+        logger.info(f"\nInference testing with question ID {evaluations['id']}: {evaluation_prompt}")
+        response = test_model(model, tokenizer, evaluation_prompt, config.prompt.instruction_prompt)
+        logger.info(f"Post-training test response for {evaluations['id']}: {response}")
     
     # Save model with training job name
     save_model(model, tokenizer, config.training.output_dir, config.training.training_job_name)

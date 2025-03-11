@@ -1,0 +1,19 @@
+{
+  "evaluations": [
+    {
+      "id": "car_2017",
+      "prompt": "I'm looking for a car from 2017 that has relatively low mileage. Any suggestions?",
+      "description": "Basic car search query focusing on year and mileage"
+    },
+    {
+      "id": "celerio_2017",
+      "prompt": "What is fuel type for Maruti Celerio Green VXI 2017?",
+      "description": "CNG"
+    },
+    {
+      "id": "redigo_fuel_type",
+      "prompt": "Which manufacture is RediGO, and what’s the fuel type on that RediGO?",
+      "description": "Redigo is by Datsun and it's petrol"
+    }
+  ]
+}

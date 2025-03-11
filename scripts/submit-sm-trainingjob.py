@@ -84,5 +84,10 @@ model_data = InputData(
     data_source="s3://654654616949-use1-finetuning/models/"
 )
 
+inference_testing_data = InputData(
+    channel_name="inference_testing",
+    data_source="s3://654654616949-use1-finetuning/inference_test/"
+)
+
 # Start the training job
-model_trainer.train(input_data_config=[input_data, model_data], wait=False)
+model_trainer.train(input_data_config=[input_data, model_data, inference_testing_data], wait=False)

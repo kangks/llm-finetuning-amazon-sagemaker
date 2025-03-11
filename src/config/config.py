@@ -84,11 +84,17 @@ class DataConfig:
     max_samples: Optional[int] = None
 
 @dataclass
+class InferenceTestConfig:
+    evaluations_path: str = os.environ.get("SM_CHANNEL_INFERENCE_TESTING", "../inference_test/")
+    evaluations_filename: str = "evaluations.json"
+
+@dataclass
 class Config:
     model: ModelConfig = field(default_factory=ModelConfig)
     prompt: PromptConfig = field(default_factory=PromptConfig)
     training: TrainingConfig = field(default_factory=TrainingConfig)
     data: DataConfig = field(default_factory=DataConfig)
+    inference_test: InferenceTestConfig = field(default_factory=InferenceTestConfig)
     logger = logging.getLogger(__name__)
 
     def __post_init__(self):
@@ -115,3 +121,6 @@ class Config:
         for key, value in asdict(self.data).items():
             self.logger.info(f"  {key}: {value}")
         
+        self.logger.info("Inference Test configuration:")
+        for key, value in asdict(self.inference_test).items():
+            self.logger.info(f"  {key}: {value}")
