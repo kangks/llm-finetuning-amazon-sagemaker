@@ -71,9 +71,6 @@ def parse_args():
                        help=f'Whether to use VLLM (default: {default_config.training.use_vllm})')
     parser.add_argument('--vllm-gpu-memory-utilization', type=float, default=default_config.training.vllm_gpu_memory_utilization,
                        help=f'VLLM GPU memory utilization (default: {default_config.training.vllm_gpu_memory_utilization})')
-    parser.add_argument('--evaluation-steps', type=int, default=default_config.training.evaluation_steps,
-                       help=f'Evaluation step (default: {default_config.training.evaluation_steps})')
-
 
     # Data configuration arguments
     parser.add_argument('--dataset-path', type=str, default=default_config.data.dataset_path,
@@ -201,8 +198,7 @@ def get_training_args(config: Config) -> GRPOConfig:
         temperature=config.training.temperature,
         beta=config.training.beta,
         use_vllm=config.training.use_vllm,
-        vllm_gpu_memory_utilization=config.training.vllm_gpu_memory_utilization,
-        evaluation_steps=config.training.evaluation_steps
+        vllm_gpu_memory_utilization=config.training.vllm_gpu_memory_utilization
     )
 
 def test_model(model, tokenizer, question: str, prompt_template: str):

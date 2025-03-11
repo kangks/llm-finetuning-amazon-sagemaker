@@ -1,5 +1,5 @@
 from sagemaker.modules.train import ModelTrainer
-from sagemaker.modules.configs import SourceCode, InputData, Compute
+from sagemaker.modules.configs import SourceCode, InputData, Compute, StoppingCondition
 
 # Step 1: Download to S3
 # huggingface-cli download unsloth/DeepSeek-R1-Distill-Llama-8B --local-dir-use-symlinks False 
@@ -37,7 +37,6 @@ hyperparameters = {
     "gradient-accumulation-steps": 8,
     "learning-rate": 5e-3,
     "logging-steps": 10,
-    "evaluation-steps": 100,
     "num-generations": 8,
     "max-prompt-length": 512,
     "max-completion-length": 256,
@@ -58,6 +57,10 @@ environment_variables: dict[str, str] = {
         "HF_HUB_OFFLINE": "1"
     }
 
+stopping_condition = StoppingCondition(
+    max_runtime_in_seconds=3*60*60 #3hours
+)
+
 # Define the ModelTrainer (https://sagemaker.readthedocs.io/en/stable/api/training/model_trainer.html#modeltrainer)
 model_trainer = ModelTrainer(
     training_image=pytorch_image,
@@ -66,7 +69,8 @@ model_trainer = ModelTrainer(
     role="arn:aws:iam::654654616949:role/SageMaker-job-finetuning",
     hyperparameters=hyperparameters,
     base_job_name="deepseek-finetuning-job",
-    environment=environment_variables
+    environment=environment_variables,
+    stopping_condition=stopping_condition
 )
 
 # Pass the input data
