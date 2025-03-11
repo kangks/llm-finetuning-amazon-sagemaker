@@ -5,13 +5,15 @@ import os
 
 @dataclass
 class ModelConfig:
+    # use path for local cache https://github.com/unslothai/unsloth/blob/main/unsloth/models/loader.py#L160
     model_name: str = "unsloth/DeepSeek-R1-Distill-Llama-8B"
     max_seq_length: int = 2048
     lora_rank: int = 32
     load_in_4bit: bool = True
     fast_inference: bool = True
-    gpu_memory_utilization: float = 0.6
-    dtype: Optional[str] = None
+    gpu_memory_utilization: float = 0.9
+    dtype: Optional[str] = None,
+    model_revision: Optional[str] = None
 
 @dataclass
 class PromptConfig:
@@ -87,26 +89,29 @@ class Config:
     prompt: PromptConfig = field(default_factory=PromptConfig)
     training: TrainingConfig = field(default_factory=TrainingConfig)
     data: DataConfig = field(default_factory=DataConfig)
+    logger = logging.getLogger(__name__)
 
     def __post_init__(self):
         """Log configuration after initialization."""
-        logger = logging.getLogger(__name__)
-        logger.info("Initializing configuration")
         
-        # Log each configuration section
-        logger.info("Model configuration:")
-        for key, value in asdict(self.model).items():
-            logger.info(f"  {key}: {value}")
-        
-        logger.info("Training configuration:")
-        for key, value in asdict(self.training).items():
-            logger.info(f"  {key}: {value}")
-        
-        logger.info("Data configuration:")
-        for key, value in asdict(self.data).items():
-            logger.info(f"  {key}: {value}")
-        
+        self.logger.info("Initializing configuration")
+
         # Don't log full prompt templates as they're verbose
-        logger.info("Prompt configuration loaded")
+        self.logger.info("Prompt configuration loaded")
         
-        logger.info("Configuration initialization complete")
+        self.logger.info("Configuration initialization complete")
+
+    def print(self):
+        # Log each configuration section
+        self.logger.info("Model configuration:")
+        for key, value in asdict(self.model).items():
+            self.logger.info(f"  {key}: {value}")
+        
+        self.logger.info("Training configuration:")
+        for key, value in asdict(self.training).items():
+            self.logger.info(f"  {key}: {value}")
+        
+        self.logger.info("Data configuration:")
+        for key, value in asdict(self.data).items():
+            self.logger.info(f"  {key}: {value}")
+        

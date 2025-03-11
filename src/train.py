@@ -27,6 +27,8 @@ def parse_args():
     # Model configuration arguments
     parser.add_argument('--model-name', type=str, default=default_config.model.model_name,
                        help=f'Name of the model to use (default: {default_config.model.model_name})')
+    parser.add_argument('--model-revision', type=str, default=default_config.model.model_revision,
+                       help=f'Revision of the model to use (default: {default_config.model.model_revision})')
     parser.add_argument('--max-seq-length', type=int, default=default_config.model.max_seq_length,
                        help=f'Maximum sequence length (default: {default_config.model.max_seq_length})')
     parser.add_argument('--lora-rank', type=int, default=default_config.model.lora_rank,
@@ -91,6 +93,7 @@ def parse_args():
 
 def update_config_from_args(config: Config, args) -> Config:
     """Update configuration with command line arguments."""
+
     # Update ModelConfig
     model_args = {
         'model_name': args.model_name,
@@ -99,9 +102,10 @@ def update_config_from_args(config: Config, args) -> Config:
         'load_in_4bit': args.load_in_4bit,
         'fast_inference': args.fast_inference,
         'gpu_memory_utilization': args.gpu_memory_utilization,
-        'dtype': None if args.dtype == "None" else args.dtype
+        'dtype': None if args.dtype is None or args.dtype == "None" else args.dtype,
+        'model_revision': None if args.model_revision == "None" or args.model_revision is None else args.model_revision,
     }
-    model_args = {k: v for k, v in model_args.items() if v is not None}
+    model_args = {k: v for k, v in model_args.items()}
     if model_args:
         config.model = ModelConfig(**{**asdict(config.model), **model_args})
 
@@ -145,11 +149,10 @@ def setup_model(config: Config):
     logger.info(f"Setting up model: {config.model.model_name}")
     PatchFastRL("GRPO", FastLanguageModel)
     
-    logger.info(f"config.model.dtype:{config.model.dtype}")
-
     model, tokenizer = FastLanguageModel.from_pretrained(
         model_name=config.model.model_name,
         max_seq_length=config.model.max_seq_length,
+        revision=config.model.model_revision,
         load_in_4bit=config.model.load_in_4bit,
         fast_inference=config.model.fast_inference,
         max_lora_rank=config.model.lora_rank,
@@ -245,8 +248,6 @@ def main():
     logger = logging.getLogger(__name__)
 
     logger.info(os.environ)
-    logger.info(f"""SM_CHANNELS:{os.getenv("SM_CHANNELS")}""")
-    logger.info(f"""SM_NUM_GPUS:{os.getenv("SM_NUM_GPUS")}""")
 
     logger.info("Starting training process")
     
@@ -257,6 +258,7 @@ def main():
     # Update configuration with command line arguments
     config = update_config_from_args(config, args)
     logger.info("Configuration updated with command line arguments")
+    config.print()
     
     # Setup model and tokenizer
     model, tokenizer = setup_model(config)

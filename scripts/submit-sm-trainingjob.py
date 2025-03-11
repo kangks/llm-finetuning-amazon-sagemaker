@@ -15,20 +15,21 @@ source_code = SourceCode(
 )
 
 training_compute = Compute(
-    instance_type="ml.g4dn.xlarge", #"ml.c5.xlarge", # "ml.g6e.4xlarge",
+    instance_type="ml.g6e.4xlarge", # "ml.g4dn.xlarge", #"ml.c5.xlarge", # "ml.g6e.4xlarge",
     instance_count=1
 )
 
 # Hyperparameters organized by configuration type
 hyperparameters = {
     # Model configuration
-    "model-name": "unsloth/DeepSeek-R1-Distill-Llama-8B",
+    # "model-name": "unsloth/DeepSeek-R1-Distill-Llama-8B",
+    "model-name": "/opt/ml/input/data/models/models--unsloth--DeepSeek-R1-Distill-Llama-8B/snapshots/736e4a6391593d33a1f019f23bc23f91cf56b830/",
     "max-seq-length": 2048,
     "lora-rank": 32,
     "load-in-4bit": True,
     "fast-inference": True,
     "gpu-memory-utilization": 0.9,
-    "dtype": None,  # Optional, can be removed if not needed
+    "dtype": "None",  # Optional, can be removed if not needed
     
     # Training configuration, https://docs.unsloth.ai/get-started/fine-tuning-guide
     "num-train-epochs": 3,
