@@ -1,6 +1,27 @@
 # LLM Fine-tuning with Amazon SageMaker
 
-This repository contains scripts for fine-tuning Large Language Models (LLMs) using Amazon SageMaker with GRPO (Generative Reward Proximal Policy Optimization).
+This repository contains scripts for fine-tuning Large Language Models (LLMs) using Amazon SageMaker with GRPO (Generative Reward Proximal Policy Optimization) and Low-Rank Adaptation (LoRA).
+
+## Overview of LoRA in LLM Fine-tuning
+
+Fine-tuning large-scale pre-trained models can be resource-intensive due to their massive number of parameters. Low-Rank Adaptation (LoRA) addresses this challenge by introducing trainable low-rank matrices into each layer of the Transformer architecture, effectively reducing the number of trainable parameters while maintaining performance. This approach freezes the original model weights and injects these low-rank matrices, leading to more efficient fine-tuning processes. 
+## Description of GRPO and Reward Functions
+
+Generative Reward Proximal Policy Optimization (GRPO) is a reinforcement learning technique tailored for training generative models, such as LLMs. It extends the Proximal Policy Optimization (PPO) algorithm by incorporating reward functions that guide the model toward generating desired outputs. In the context of LLM fine-tuning, reward functions are designed to encourage the model to produce text that aligns with specific objectives, such as coherence, relevance, or adherence to certain guidelines. By optimizing these reward functions, GRPO enables the model to learn from feedback and improve its generative capabilities in a controlled manner.
+
+## Amazon SageMaker's ModelTrainer Module and Its Benefits
+
+Amazon SageMaker's `ModelTrainer` class is part of the SageMaker Python SDK, providing a high-level interface for training machine learning models on SageMaker. It simplifies the configuration and submission of training jobs by abstracting the underlying infrastructure details. Key benefits include:
+
+- **Simplified Configuration**: `ModelTrainer` reduces the complexity of setting up training jobs by requiring only essential parameters, making it more accessible for users without deep AWS expertise. 
+
+- **Seamless Integration**: It integrates smoothly with other SageMaker components, allowing for straightforward transitions from training to deployment phases. 
+
+- **Scalability**: `ModelTrainer` leverages SageMaker's infrastructure to automatically scale resources based on the training workload, ensuring efficient use of computational resources. 
+
+- **Flexibility**: Users can customize training configurations and incorporate advanced features as needed, providing a balance between simplicity and control. 
+
+By utilizing `ModelTrainer`, users can streamline the process of fine-tuning LLMs, benefiting from SageMaker's robust infrastructure and services.
 
 ## Getting Started
 
@@ -15,7 +36,7 @@ This repository contains scripts for fine-tuning Large Language Models (LLMs) us
 
 1. Install the required packages:
 ```bash
-pip install -r src/requirements.txt
+pip install -r requirements.txt
 ```
 
 2. Set up your AWS credentials and SageMaker role:
@@ -50,7 +71,7 @@ export SAGEMAKER_ROLE_ARN=arn:aws:iam::your_account_id:role/your_sagemaker_role
 
 3. Submit the training job:
 ```bash
-python scripts/submit-sm-trainingjob.py
+python scripts/submit-sagemaker-training.py
 ```
 
 ## AWS Infrastructure Overview
@@ -128,12 +149,4 @@ Important parameters that affect the training process:
    - `load-in-4bit`: Enable 4-bit quantization
 
 2. **Training Configuration**:
-   - `learning-rate`: Learning rate for optimization (default: 5e-3)
-   - `num-train-epochs`: Number of training epochs (default: 3)
-   - `gradient-accumulation-steps`: Steps for gradient accumulation (default: 8)
-   - `per-device-train-batch-size`: Batch size per device (default: 1)
-
-3. **Generation Parameters**:
-   - `temperature`: Sampling temperature (default: 0.9)
-   - `max-prompt-length`: Maximum prompt length (default: 512)
-   - `max-completion-length`: Maximum completion length (default: 256)
+   - `learning-rate`: Learning rate for optimization (default 
