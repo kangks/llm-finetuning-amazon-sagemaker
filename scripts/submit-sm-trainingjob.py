@@ -22,7 +22,7 @@ training_compute = Compute(
 # Hyperparameters organized by configuration type
 hyperparameters = {
     # Model configuration
-    # "model-name": "unsloth/DeepSeek-R1-Distill-Llama-8B",
+    # "model-name": "unsloth/DeepSeek-R1-Distill-Llama-14B",
     "model-name": "/opt/ml/input/data/models/models--unsloth--DeepSeek-R1-Distill-Llama-8B/snapshots/736e4a6391593d33a1f019f23bc23f91cf56b830/",
     "max-seq-length": 2048,
     "lora-rank": 32,
@@ -35,7 +35,7 @@ hyperparameters = {
     "num-train-epochs": 3,
     "per-device-train-batch-size": 1,
     "gradient-accumulation-steps": 8,
-    "learning-rate": 5e-3,
+    "learning-rate": 0.00001,
     "logging-steps": 10,
     "num-generations": 8,
     "max-prompt-length": 512,
