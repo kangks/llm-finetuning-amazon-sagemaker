@@ -2,5 +2,9 @@ accelerate==1.4.0
 unsloth==2025.3.8
 boto3
 sagemaker
-vllm
+vllm==0.7.3
 huggingface_hub
+# To use Transfomer
+trl 
+peft 
+math_verify
